@@ -58,7 +58,7 @@ def RNN(x, weights, biases):
     # Reshaping to (n_steps*batch_size, n_input)
     x = tf.reshape(x, [-1, n_input])
     # Split to get a list of 'n_steps' tensors of shape (batch_size, n_input)
-    x = tf.split(x, n_steps, 0)
+    x = tf.split(0, n_steps, x)
 
     # Define a lstm cell with tensorflow
     lstm_cell = rnn.BasicLSTMCell(n_hidden, forget_bias=1.0)
